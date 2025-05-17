@@ -77,7 +77,7 @@ export default function ServiceForm() {
 
   // Calculate total price dynamically based on selections
   const totalPrice = Object.entries(selections)
-    .filter(([_, val]) => val)
+    .filter(([val]) => val)
     .reduce((sum, [cat, service]) => {
       const price = servicePriceMap[cat as Category]?.[service as keyof typeof servicePriceMap[Category]] || 0;
       return sum + price;
@@ -143,10 +143,10 @@ export default function ServiceForm() {
           <div key={index} className="flex-1 text-center">
             <div
               className={`mx-auto mb-1 w-8 h-8 flex items-center justify-center rounded-full border-2 ${index === step
-                  ? "border-blue-600 bg-blue-600 text-white"
-                  : index < step
-                    ? "border-green-600 bg-green-600 text-white"
-                    : "border-gray-300 text-gray-500"
+                ? "border-blue-600 bg-blue-600 text-white"
+                : index < step
+                  ? "border-green-600 bg-green-600 text-white"
+                  : "border-gray-300 text-gray-500"
                 }`}
             >
               {index + 1}
@@ -241,8 +241,8 @@ export default function ServiceForm() {
             onClick={handlePrevious}
             disabled={step === 0}
             className={`px-6 py-2 rounded border ${step === 0
-                ? "border-gray-300 text-gray-400 cursor-not-allowed"
-                : "border-gray-700 text-gray-700 hover:bg-gray-100"
+              ? "border-gray-300 text-gray-400 cursor-not-allowed"
+              : "border-gray-700 text-gray-700 hover:bg-gray-100"
               }`}
           >
             Previous
