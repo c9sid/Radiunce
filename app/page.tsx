@@ -89,7 +89,7 @@ export default function ServiceForm() {
       return;
     }
 
-    const selectionsArr = Object.entries(data.selections || {}).filter(([_, val]) => val);
+    const selectionsArr = Object.entries(data.selections || {}).filter(([val]) => val);
 
     const summary = selectionsArr
       .map(
