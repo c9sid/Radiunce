@@ -14,7 +14,7 @@ type Request = {
     created_at: string;
 };
 
-function formatSelections(selections: any): string {
+function formatSelections(selections: Record<string, string>): string {
     if (!selections || typeof selections !== "object") return "";
     return Object.entries(selections)
         .map(([key, value]) => `${key}: ${value}`)
@@ -207,8 +207,8 @@ export default function AdminPage() {
                         key={i}
                         onClick={() => setCurrentPage(i + 1)}
                         className={`px-3 py-1 rounded border ${currentPage === i + 1
-                                ? "bg-blue-600 text-white"
-                                : "bg-white text-gray-700"
+                            ? "bg-blue-600 text-white"
+                            : "bg-white text-gray-700"
                             }`}
                     >
                         {i + 1}
